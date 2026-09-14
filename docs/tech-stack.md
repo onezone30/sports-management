@@ -14,7 +14,7 @@ Sports-management is a rec-league app for managing teams, schedules, and stats, 
 | HTTP client | axios |
 | Frontend state | Plain `useState` / `useContext` (no query-caching library) |
 | Styling | Tailwind CSS |
-| Components | shadcn/ui (Tailwind + Radix primitives, copy-paste ownership) |
+| Components | shadcn/ui (Tailwind + Base UI primitives, copy-paste ownership) |
 | Backend testing | Pest |
 | Frontend testing | Vitest |
 | Hosting | Not decided yet, local dev only for now |
