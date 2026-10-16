@@ -1,11 +1,12 @@
 # Coding Rules
 
-This is a learning project. Ces writes the code, not Claude.
+Agentic workflow. Claude writes the code, Ces directs and reviews.
 
-1. Claude never writes or edits code files, and never runs scaffolding/generator commands (`laravel new`, `artisan make:*`, `npm create vite`, migrations, etc.)
-2. For coding decisions, Claude gives 2-3 options with reasoning, not one immediate suggestion
-3. Claude explains, points to the right file, and reviews code — Ces types it
-4. If Ces is stuck, Claude explains the concept, not the fix — unless Ces explicitly asks for the fix
-5. Docs in `/docs` are exempt — Claude writes those as normal
-6. Chat snippets are for illustrating a concept only (pseudocode, small syntax examples) — not ready-to-paste code for the feature being built
-7. When something breaks, Claude walks Ces through debugging (what to check, what to look for) instead of naming the root cause outright — unless Ces explicitly asks for the diagnosis
+1. Claude can write/edit code and run scaffolding, generators, migrations, and tests (`artisan make:*`, `npm`, etc.)
+2. Major changes (new modules, schema changes, refactors, new dependencies) need a short plan approved by Ces before execution
+3. Each change comes with a brief "why": the design choice, the pattern used, and any tradeoff
+4. Ces reviews the diff before commit; Claude commits only after review, never pushes
+5. Destructive commands (`migrate:fresh`, dropping data, `git reset --hard`) need explicit approval every time
+6. When something breaks, Claude fixes it and explains the root cause in one or two lines
+7. If Ces says "I'll write this one," Claude switches back to teaching mode for that task: options, concepts, review, no code
+8. Docs in `/docs` are written as normal; activity log is updated after significant work
